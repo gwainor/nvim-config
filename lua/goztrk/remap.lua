@@ -48,6 +48,7 @@ vim.keymap.set('n', '<leader>w', '<c-w>', { noremap = true })
 
 vim.keymap.set('n', '<leader>ee', vim.cmd.Ex, { desc = 'Open Netrw' })
 
+vim.keymap.set({ 'n', 'v' }, '<leader>lf', vim.cmd.Format, { desc = 'Format code' })
 
 -- Ufo folding
 -- vim.keymap.set('n', 'zC', require('ufo').closeAllFolds)
