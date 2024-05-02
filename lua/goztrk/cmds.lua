@@ -17,4 +17,3 @@ command("Format", function(args)
 	conform.format { async = true, lsp_fallback = true, range = range }
 	vim.notify("Format Done", vim.log.levels.INFO, { title = "Format" })
 end, { nargs = "*", desc = "Code Format", range = true })
-
