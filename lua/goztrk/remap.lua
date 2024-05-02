@@ -6,26 +6,26 @@ vim.keymap.set('v', '<', '<gv', { silent = true })
 vim.keymap.set('v', '>', '>gv', { silent = true })
 
 -- Easy move lines in visual mode
-vim.keymap.set('x', 'K', ":move '<-2<CR>gv=gv", { silent = true})
-vim.keymap.set('x', 'J', ":move '<+1<CR>gv=gv", { silent = true})
+vim.keymap.set('x', 'K', ":move '<-2<CR>gv=gv", { silent = true })
+vim.keymap.set('x', 'J', ":move '<+1<CR>gv=gv", { silent = true })
 
 -- Keep cursor in the center when scrolling
-vim.keymap.set('n', '<C-u>', '<C-u>zz', { silent = true})
-vim.keymap.set('n', '<C-d>', '<C-d>zz', { silent = true})
+vim.keymap.set('n', '<C-u>', '<C-u>zz', { silent = true })
+vim.keymap.set('n', '<C-d>', '<C-d>zz', { silent = true })
 
 -- Keep cursor in the center when searching
-vim.keymap.set('n', 'n', 'nzzzv', silent)
-vim.keymap.set('n', 'N', 'Nzzzv', silent)
+vim.keymap.set('n', 'n', 'nzzzv', { silent = true })
+vim.keymap.set('n', 'N', 'Nzzzv', { silent = true })
 
 -- Save file with CTRL-S
 vim.keymap.set('n', '<C-s>', ':w<CR>')
 vim.keymap.set('i', '<C-s>', '<ESC>:w<CR>')
 
 -- Don't yank on delete char
-vim.keymap.set('n', 'x', '"_x', silent)
-vim.keymap.set('n', 'X', '"_X', silent)
-vim.keymap.set('v', 'x', '"_x', silent)
-vim.keymap.set('v', 'X', '"_X', silent)
+vim.keymap.set('n', 'x', '"_x', { silent = true })
+vim.keymap.set('n', 'X', '"_X', { silent = true })
+vim.keymap.set('v', 'x', '"_x', { silent = true })
+vim.keymap.set('v', 'X', '"_X', { silent = true })
 
 -- Toggle highlights
 vim.keymap.set('n', '<F8>', ':set invhlsearch hlsearch?<CR>', { desc = 'Toggle hlsearch' })
@@ -48,8 +48,6 @@ vim.keymap.set('n', '<leader>w', '<c-w>', { noremap = true })
 
 vim.keymap.set('n', '<leader>ee', vim.cmd.Ex, { desc = 'Open Netrw' })
 
--- Undotree
-vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle, { desc = 'Open Undotree panel' })
 
 -- Ufo folding
 -- vim.keymap.set('n', 'zC', require('ufo').closeAllFolds)
