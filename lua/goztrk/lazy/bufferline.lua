@@ -10,6 +10,9 @@ return {
 		config = function()
 			require("bufferline").setup({
 				highlights = require("rose-pine.plugins.bufferline"),
+        options = {
+          persist_buffer_sort = false,
+        },
 			})
 		end,
 	},
