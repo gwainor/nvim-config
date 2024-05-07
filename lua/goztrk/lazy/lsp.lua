@@ -64,8 +64,37 @@ return {
 							},
 						})
 					end,
+					pylsp = function()
+						local lspconfig = require("lspconfig")
+						lspconfig.pylsp.setup({
+							settings = {
+								pylsp = {
+									plugins = {
+										-- pylsp_mypy = { enabled = true },
+										-- Disabled
+										black = { enabled = false },
+										-- pylint = { enabled = false, executable = "pylint" },
+										-- ruff = { enabled = false },
+										flake8 = { enabled = true },
+										pyls_isort = { enabled = false },
+										pycodestyle = { enabled = false },
+										pyflakes = { enabled = false },
+										pyls_mypy = {
+											enabled = true,
+											report_progress = true,
+											live_mode = false,
+											overrides = { "--python-executable", py_path = true },
+										},
+										jedi_completion = { fuzzy = false },
+									},
+								},
+							},
+						})
+					end,
 				},
 			})
+
+			vim.filetype.add({ extension = { templ = "templ" } })
 
 			vim.keymap.set("n", "K", "<cmd>lua vim.lsp.buf.hover()<cr>", { desc = "Hover documentation" })
 			vim.keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<cr>", { desc = "Go to definition" })
