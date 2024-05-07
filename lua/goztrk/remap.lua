@@ -53,3 +53,8 @@ vim.keymap.set({ 'n', 'v' }, '<leader>lf', vim.cmd.Format, { desc = 'Format code
 -- Ufo folding
 -- vim.keymap.set('n', 'zC', require('ufo').closeAllFolds)
 -- vim.keymap.set('n', 'zA', require('ufo').openAllFolds)
+
+-- emacs-like start/end of line.
+-- Yes, I know that this is not the best way to do it, but I'm used to it.
+vim.keymap.set({'i', 'n'}, '<C-a>', '^', { silent = true })
+vim.keymap.set({'i', 'n'}, '<C-e>', '$', { silent = true })
