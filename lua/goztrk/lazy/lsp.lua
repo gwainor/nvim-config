@@ -74,7 +74,7 @@ return {
 										-- Disabled
 										black = { enabled = false },
 										-- pylint = { enabled = false, executable = "pylint" },
-										-- ruff = { enabled = false },
+										ruff = { enabled = false },
 										flake8 = { enabled = true },
 										pyls_isort = { enabled = false },
 										pycodestyle = { enabled = false },

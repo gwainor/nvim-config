@@ -27,6 +27,7 @@ return {
 					["<C-e>"] = cmp.mapping.close(),
 				}),
 				sources = cmp.config.sources({
+					-- { name = "copilot" },
 					{ name = "nvim_lsp" },
 					{ name = "luasnip" }, -- For luasnip users.
 				}, {
