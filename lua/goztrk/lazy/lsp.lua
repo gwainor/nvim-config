@@ -5,7 +5,6 @@ return {
 			"williamboman/mason.nvim",
 			"williamboman/mason-lspconfig.nvim",
 		},
-
 		config = function()
 			local cmp_lsp = require("cmp_nvim_lsp")
 			local capabilities = vim.tbl_deep_extend(
@@ -41,7 +40,8 @@ return {
 					-- "gopls",
 					-- "templ",
 					-- "htmx",
-					"pylsp",
+					"pyright",
+          "ruff",
 					"tailwindcss",
 				},
 				handlers = {
@@ -59,33 +59,6 @@ return {
 									runtime = { version = "Lua 5.1" },
 									diagnostics = {
 										globals = { "vim", "it", "describe", "before_each", "after_each" },
-									},
-								},
-							},
-						})
-					end,
-					pylsp = function()
-						local lspconfig = require("lspconfig")
-						lspconfig.pylsp.setup({
-							settings = {
-								pylsp = {
-									plugins = {
-										-- pylsp_mypy = { enabled = true },
-										-- Disabled
-										black = { enabled = false },
-										-- pylint = { enabled = false, executable = "pylint" },
-										ruff = { enabled = false },
-										flake8 = { enabled = true },
-										pyls_isort = { enabled = false },
-										pycodestyle = { enabled = false },
-										pyflakes = { enabled = false },
-										pyls_mypy = {
-											enabled = true,
-											report_progress = true,
-											live_mode = false,
-											overrides = { "--python-executable", py_path = true },
-										},
-										jedi_completion = { fuzzy = false },
 									},
 								},
 							},
