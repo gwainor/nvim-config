@@ -24,8 +24,7 @@ return {
 				},
 				handlers = {
 					["html"] = function()
-						local lspconfig = require("lspconfig")
-						lspconfig.html.setup({
+						vim.lsp.config("html", {
 							capabilities = capabilities,
 							filetypes = { "html", "templ" },
 						})
@@ -46,13 +45,12 @@ return {
 				},
 				handlers = {
 					function(server_name) -- default handler (optional)
-						require("lspconfig")[server_name].setup({
+						vim.lsp.config(server_name, {
 							capabilities = capabilities,
 						})
 					end,
 					["lua_ls"] = function()
-						local lspconfig = require("lspconfig")
-						lspconfig.lua_ls.setup({
+						vim.lsp.config("lua_ls", {
 							capabilities = capabilities,
 							settings = {
 								Lua = {
