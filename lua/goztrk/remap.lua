@@ -1,5 +1,6 @@
 -- H for moving to the first non-block character of the line. Remap of ^
 vim.keymap.set('n', 'H', '^', { silent = true })
+vim.keymap.set('n', 'L', '$', { silent = true })
 
 -- Keep visual mode while indenting
 vim.keymap.set('v', '<', '<gv', { silent = true })
@@ -18,14 +19,18 @@ vim.keymap.set('n', 'n', 'nzzzv', { silent = true })
 vim.keymap.set('n', 'N', 'Nzzzv', { silent = true })
 
 -- Save file with CTRL-S
-vim.keymap.set('n', '<C-s>', ':w<CR>')
-vim.keymap.set('i', '<C-s>', '<ESC>:w<CR>')
+vim.keymap.set('n', '<leader>d', ':w<CR>')
 
 -- Don't yank on delete char
 vim.keymap.set('n', 'x', '"_x', { silent = true })
 vim.keymap.set('n', 'X', '"_X', { silent = true })
 vim.keymap.set('v', 'x', '"_x', { silent = true })
 vim.keymap.set('v', 'X', '"_X', { silent = true })
+
+-- Extra map for deleting line without yanking
+vim.keymap.set('n', '<leader>dd', '"_dd', { silent = true })
+vim.keymap.set('n', '<leader>D', '"_D', { silent = true })
+vim.keymap.set('v', '<leader>d', '"_d', { silent = true })
 
 -- Toggle highlights
 vim.keymap.set('n', '<F8>', ':set invhlsearch hlsearch?<CR>', { desc = 'Toggle hlsearch' })
@@ -48,13 +53,8 @@ vim.keymap.set('n', '<leader>w', '<c-w>', { noremap = true })
 
 vim.keymap.set('n', '<leader>ee', vim.cmd.Ex, { desc = 'Open Netrw' })
 
-vim.keymap.set({ 'n', 'v' }, '<leader>lf', vim.cmd.Format, { desc = 'Format code' })
+vim.keymap.set({ 'n', 'v' }, '<leader>fc', vim.cmd.Format, { desc = 'Format code' })
 
 -- Ufo folding
 -- vim.keymap.set('n', 'zC', require('ufo').closeAllFolds)
 -- vim.keymap.set('n', 'zA', require('ufo').openAllFolds)
-
--- emacs-like start/end of line.
--- Yes, I know that this is not the best way to do it, but I'm used to it.
-vim.keymap.set({'i', 'n'}, '<C-a>', '^', { silent = true })
-vim.keymap.set({'i', 'n'}, '<C-e>', '$', { silent = true })

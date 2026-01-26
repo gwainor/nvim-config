@@ -1,8 +1,8 @@
 return {
-	{
-		"tummetott/unimpaired.nvim",
-		config = function()
-			require("unimpaired").setup({})
-		end,
-	},
+  {
+    "tummetott/unimpaired.nvim",
+    config = function()
+      require("unimpaired").setup({})
+    end,
+  },
 }
