@@ -2,8 +2,8 @@ return {
 	{
 		"neovim/nvim-lspconfig",
 		dependencies = {
-			"williamboman/mason.nvim",
-			"williamboman/mason-lspconfig.nvim",
+			"mason-org/mason.nvim",
+			"mason-org/mason-lspconfig.nvim",
 			"hrsh7th/cmp-nvim-lsp",
 			"hrsh7th/cmp-buffer",
 			"hrsh7th/cmp-path",
@@ -13,6 +13,25 @@ return {
 			"saadparwaiz1/cmp_luasnip",
 			"j-hui/fidget.nvim",
 		},
+		opts = function()
+			--@class PluginLspOpts
+			local ret = {
+				diagnostics = {
+					underline = true,
+					update_in_insert = false,
+					virtual_text = {
+						spacing = 4,
+						source = "if_many",
+						prefix = "●",
+						-- this will set set the prefix to a function that returns the diagnostics icon based on the severity
+						-- prefix = "icons",
+					},
+					severity_sort = true,
+				},
+				inlay_hints = { enabled = true },
+			}
+			return ret
+		end,
 		config = function()
 			local cmp = require("cmp")
 			local cmp_lsp = require("cmp_nvim_lsp")
