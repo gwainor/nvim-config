@@ -1,1 +1,1 @@
-require('goztrk')
+require("goztrk")

@@ -1,4 +1,4 @@
-vim.opt.clipboard = 'unnamedplus'
+vim.opt.clipboard = "unnamedplus"
 vim.opt.termguicolors = true
 vim.opt.laststatus = 2
 vim.opt.statusline = " %f %m %= %l:%c"
@@ -25,13 +25,13 @@ vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 vim.opt.smartindent = true
 
-vim.opt.foldcolumn = '1'
+vim.opt.foldcolumn = "1"
 vim.opt.foldlevel = 99
 vim.opt.foldlevelstart = 99
 vim.opt.foldenable = true
 
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ','
-vim.g.python3_host_prog = '~/.pyenv/versions/py3nvim/bin/python'
+vim.g.mapleader = " "
+vim.g.maplocalleader = ","
+vim.g.python3_host_prog = "~/.pyenv/versions/py3nvim/bin/python"
 vim.g.loaded_perl_provider = 0
 vim.g.loaded_ruby_provider = 0
