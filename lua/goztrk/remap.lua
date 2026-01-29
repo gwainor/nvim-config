@@ -32,6 +32,13 @@ vim.keymap.set('n', '<leader>dd', '"_dd', { silent = true })
 vim.keymap.set('n', '<leader>D', '"_D', { silent = true })
 vim.keymap.set('v', '<leader>d', '"_d', { silent = true })
 
+vim.keymap.set(
+	"n",
+	"<leader>cp",
+	':let @+ = expand("%:f")<CR>',
+	{ desc = "Copy current buffer relative path to clipboard", silent = true }
+)
+
 -- Toggle highlights
 vim.keymap.set('n', '<F8>', ':set invhlsearch hlsearch?<CR>', { desc = 'Toggle hlsearch' })
 
