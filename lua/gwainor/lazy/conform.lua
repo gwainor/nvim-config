@@ -18,20 +18,15 @@ return {
         formatters = {
           prettier = { require_cwd = true },
           biome = { require_cwd = true },
+          ruff = { require_cwd = true },
         },
         formatters_by_ft = {
           lua = { "stylua" },
-          python = { "ruff", "black", stop_after_first = true },
-          typescriptreact = function(bufnr)
-            if require("conform").get_formatter_info("biome", bufnr).available then
-              return { "biome", "biome-organize-imports" }
-            else
-              return { "prettierd" }
-            end
-          end,
+          python = { "ruff_fix", "ruff_format", "ruff_organize_imports" },
+          typescript = { "biome-check", "prettierd", stop_after_first = true },
+          typescriptreact = { "biome-check", "prettierd", stop_after_first = true },
           javascript = { "biome", "prettierd", stop_after_first = true },
-          javascriptreact = { "biome", "prettierd", stop_after_first = true },
-          typescript = { "biome", "prettierd", stop_after_first = true },
+          javascriptreact = { "biome-check", "prettierd", stop_after_first = true },
           html = { "prettierd" },
           htmldjango = { "prettierd" },
           css = { "prettierd" },
